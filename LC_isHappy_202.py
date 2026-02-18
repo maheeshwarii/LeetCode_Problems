@@ -1,0 +1,17 @@
+def isHappy(n):
+    seen = set()
+    while n != 1:
+        if n in seen:
+            return False
+        seen.add(n)
+        total = 0
+        while n:
+            digit = n % 10
+            total += digit * digit
+            n //= 10
+        n = total
+    return True
+
+#main
+n = 19
+print(isHappy(n))
